@@ -1,5 +1,6 @@
 var express = require('express');
 var swig = require('swig');
+var mongoose = require('mongoose');
 var path = require('path');
 var favicon = require('static-favicon');
 var logger = require('morgan');
@@ -10,6 +11,11 @@ var routes = require('./routes/index');
 var users = require('./routes/users');
 
 var app = express();
+
+// Mongoose connect
+mongoose.connect('mongodb://localhost/wikistack');
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'mongodb connection error:'));
 
 // view engine setup
 app.engine('html', swig.renderFile);
