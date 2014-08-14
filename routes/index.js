@@ -7,7 +7,6 @@ router.get('/', function(req, res) {
   models.Page.find({}, function(err, docs){
   res.render('index', { docs: docs });
   });
-
 });
 
 module.exports = router;
