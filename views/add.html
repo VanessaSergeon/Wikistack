@@ -23,35 +23,27 @@
 <!-- END OF NAVBAR -->
 
   <div class="container-fluid">
-<header>
-  <h1>BROWSE MY WIKISTACK</h1>
-  <hr>
-</header>
+    <header>
+      <h1>ADD A PAGE</h1>
+      <hr>
+    </header>
 
-<!-- START ROW 1 -->
-  <div class="row">
-
-    <!-- START SIDEBAR -->
-    <div class="col-md-2 sidebar">
-      <ul class="nav nav-sidebar">
-        <li class="active"><a href="#">Fullstack Home</a></li>
-        <li><a href="#">About Me</a></li>
-        <li><a href="#">My Projects</a></li>
-        <li><a href="#">My City</a></li>
-        <li><a href="#">Code I've Written</a></li>
-      </ul>
-    </div>
-    <!-- END SIDEBAR -->
-
-
-<!-- ******* Page Content ********** -->
-
-    {% block content %}{% endblock %}
-
-<!-- ******* End Page Content ********** -->
+    <section>
+      <form action="/add/submit" method="post">
+        <div class="form-group">
+          <label for="addTitle">PAGE TITLE</label>
+          <input name="title" type="text" class="form-control" id="addTitle">
+        </div>
+        <div class="form-group">
+          <label for="addContent">PAGE CONTENT</label>
+          <textarea name="body" class="form-control" rows="10" id="addContent"></textarea>
+        </div>
+        <button type="submit" class="btn btn-success">Submit</button>
+      </form>
+    </section>
+  </div>
 
 
-    </div> <!-- end row 1 -->
     <footer class="container-fluid">
       <hr>
       WikiStack, Fullstack Academy
