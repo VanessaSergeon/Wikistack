@@ -1,6 +1,10 @@
 {% extends "layout.html" %}
 
 {% block content %}
-    <h1>{{title}}</h1>
-    <p>Welcome to {{title}}</p>
+    <ul>
+      {% for doc in docs %}
+        <li><a href="/docs/{{doc.url_name}}">{{doc.title}}</a></li>
+      {% endfor %}
+    </ul>
+
 {% endblock %}

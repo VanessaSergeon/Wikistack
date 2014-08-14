@@ -1,25 +1,18 @@
 var express = require('express');
 var router = express.Router();
+var models = require('../models/');
 
 router.get('/', function(req, res) {
   res.render('add');
 });
 
 router.post('/submit', function(req, res) {
-  console.log('this is the body: ', req.body);
-  var models = require('../models/');
-  // STUDENT ASSIGNMENT:
-  // add definitions of the `title`, `body` and `url_name` variables here
   var title = req.body.title;
-  console.log('this is the title: ', title);
   var body = req.body.body;
   var generateUrlName = function(name) {
     if (typeof name != "undefined" && name !== "") {
-      // Removes all non-alphanumeric characters from name
-      // And make spaces underscore
       return name.replace(/[\s]/ig,"_").replace(/[^\w]/ig,"");
     } else {
-      // Generates random 5 letter string
       return Math.random().toString(36).substring(2,7);
     }
   };
