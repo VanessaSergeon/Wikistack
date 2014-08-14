@@ -6,3 +6,12 @@ body {
 a {
   color: #00B7FF;
 }
+
+
+.btn-group form  {
+  display: inline-block;
+}
+
+li {
+  margin: 0 0 10px 0;
+}

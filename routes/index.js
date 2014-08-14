@@ -9,4 +9,16 @@ router.get('/', function(req, res) {
   });
 });
 
+router.post('/edit', function(req, res) {
+  console.log('this is the console log from edit button', req.body);
+  // go to an edit page?
+});
+
+router.post('/delete', function(req, res) {
+  console.log('this is the console log from delete button', req.body);
+  models.Page.findByIdAndRemove(req.body.id, function(err, docs) {
+    // remove
+  });
+});
+
 module.exports = router;

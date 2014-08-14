@@ -11,8 +11,8 @@ module.exports = function(swig) {
     return "<a href='/wiki/"+doc.url_name+"'>"+link_name+"</a>";
   };
   page_link.safe = true;
-
   swig.setFilter('page_link', page_link);
+////////////////////
 
   var marked = require('marked');
   var markedFilter = function (body) {

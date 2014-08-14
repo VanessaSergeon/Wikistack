@@ -5,7 +5,21 @@
   {% if docs.length > 0 %}
   <ul>
     {% for doc in docs %}
-      <li>{{doc|page_link}}</li>
+      <li>
+        {{doc|page_link}}
+
+        <div class="btn-group">
+          <form method="post" action="/edit">
+            <input type="hidden" name="id" value="{{doc.id}}">
+            <button class="btn btn-primary btn-xs" type="edit">Edit</button>
+          </form>
+          <form method="post" action="/delete">
+            <input type="hidden" name="id" value="{{doc.id}}">
+            <button class="btn btn-primary btn-xs" type="delete">Delete</button>
+          </form>
+        </div>
+
+      </li>
     {% endfor %}
   </ul>
   {% else %}
