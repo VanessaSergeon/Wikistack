@@ -10,5 +10,4 @@ router.get('/:url_name', function(req, res) {
     res.render('show', {page: page});
   });
 });
-
 module.exports = router;

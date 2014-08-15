@@ -7,6 +7,7 @@
     {% for doc in docs %}
       <li>
         {{doc|page_link}}
+        <!-- this 'pipe' passes the doc data to the filter.js page_link. a way to run functions in swig -->
 
         <div class="btn-group">
           <form method="post" action="/edit">

@@ -12,6 +12,7 @@ module.exports = function(swig) {
   };
   page_link.safe = true;
   swig.setFilter('page_link', page_link);
+
 ////////////////////
 
   var marked = require('marked');
